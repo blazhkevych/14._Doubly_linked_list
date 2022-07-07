@@ -2,16 +2,16 @@
 
 struct Elem
 {
-	char data; // данные
-	Elem* next, * prev;
+	char m_data; // данные
+	Elem* m_next, * m_prev;
 };
 
 class List
 {
 	// Голова, хвост
-	Elem* Head, * Tail;
+	Elem* m_head, * m_tail;
 	// Количество элементов
-	int Count;
+	int m_count;
 
 public:
 
@@ -25,10 +25,10 @@ public:
 	~List();
 
 	// Получить количество элементов
-	int GetCount();
+	int GetCount() const;
 
 	// Получить элемент списка
-	Elem* GetElem(int);
+	Elem* GetElem(int) ;
 
 	// Удалить весь список
 	void DelAll();
@@ -52,30 +52,30 @@ public:
 	void DelTail();
 
 	// Печать списка, начиная с головы
-	void PrintHead();
+	void PrintHead() const;
 
 	//Печать списка, начиная с хвоста
-	void PrintTail();
+	void PrintTail() const;
 
 	//перегрузка оператора =
-	List& operator = (const List&);
+	List& operator = (const List&);	
 
 	// Метод поиска заданного элемента по ключу. Ключ
 	// передаётся методу в качестве параметра. Метод
 	// возвращает позицию найденного элемента в случае
 	// успеха или - 1 в противном случае.
-	int Find(char key);
+	int Find(char key) const;
 
 	// Метод замены значения указанного элемента на другое
 	// значение, передаваемое методу в качестве параметра.
-	void Replace(char value, int position);
+	void Replace(char value, int position) const;
 
 	// Метод удаления элементов списка, значение которых
 	// совпадает с заданным ключом.
 	void DelElementByKey(char key);
 
 	// Перегруженный оператор индексирования.
-	char& operator[](int position);
+	char& operator[](int position) ;
 
 	// Метод сортировки элементов списка.
 	void Sort();
