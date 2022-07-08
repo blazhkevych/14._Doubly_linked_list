@@ -2,7 +2,7 @@
 
 struct Elem
 {
-	char m_data; // данные
+	char m_data; // Данные
 	Elem* m_next, * m_prev;
 };
 
@@ -28,7 +28,7 @@ public:
 	int GetCount() const;
 
 	// Получить элемент списка
-	Elem* GetElem(int) ;
+	Elem* GetElem(int) const;
 
 	// Удалить весь список
 	void DelAll();
@@ -57,8 +57,8 @@ public:
 	//Печать списка, начиная с хвоста
 	void PrintTail() const;
 
-	//перегрузка оператора =
-	List& operator = (const List&);	
+	// Перегрузка оператора =
+	List& operator = (const List&);
 
 	// Метод поиска заданного элемента по ключу. Ключ
 	// передаётся методу в качестве параметра. Метод
@@ -75,7 +75,7 @@ public:
 	void DelElementByKey(char key);
 
 	// Перегруженный оператор индексирования.
-	char& operator[](int position) ;
+	char& operator[](int position) const;
 
 	// Метод сортировки элементов списка.
 	void Sort();

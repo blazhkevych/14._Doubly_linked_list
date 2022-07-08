@@ -202,7 +202,7 @@ int List::GetCount() const
 	return m_count;
 }
 
-Elem* List::GetElem(int pos)
+Elem* List::GetElem(int pos) const
 {
 	Elem* temp = m_head;
 	if (pos < 0 || pos >= m_count)
@@ -235,7 +235,6 @@ List& List::operator = (const List& L)
 // возвращает позицию найденного элемента в случае
 // успеха или - 1 в противном случае.
 int List::Find(char key) const
-// 2.05.35
 {
 	int position{ 0 };
 	// Запоминаем адрес головного элемента.
@@ -257,7 +256,7 @@ int List::Find(char key) const
 
 // Метод замены значения указанного элемента на другое
 // значение, передаваемое методу в качестве параметра.
-void List::Replace(char value, int position) const // 02.06.05
+void List::Replace(char value, int position) const 
 {
 	if (position < 0 || position >= m_count)
 		return;
@@ -283,7 +282,7 @@ void List::Replace(char value, int position) const // 02.06.05
 
 // Метод удаления элементов списка, значение которых
 // совпадает с заданным ключом.
-void List::DelElementByKey(char key) // 02.06.35
+void List::DelElementByKey(char key) 
 {
 	int i{ 0 };
 	// Запоминаем адрес головного элемента.
@@ -306,7 +305,7 @@ void List::DelElementByKey(char key) // 02.06.35
 }
 
 // Перегруженный оператор индексирования.
-char& List::operator[](int position)
+char& List::operator[](int position) const
 {
 	if (position < 0 || position >= m_count)
 		return m_head->m_data;
@@ -328,24 +327,6 @@ char& List::operator[](int position)
 // Метод сортировки элементов списка.
 void List::Sort()
 {
-	// Пока еще есть элементы.
-	/*while (head != nullptr)
-	{*/
-	/*int i{ 0 }, j{ 0 };
-	for (Elem* head = m_head; head != nullptr; head = head->m_next)
-	{
-		for (Elem* tail = m_tail; j > i; tail = tail->m_prev)
-		{
-			if (arr[j - 1] > arr[j])
-			{
-				int x = arr[j - 1];
-				arr[j - 1] = arr[j];
-				arr[j] = x;
-			}
-			j--;
-		}
-		i++;
-	}*/
 	// Запоминаем адрес головного элемента.
 	List temp = *this;
 	for (int i = 0; i < m_count; i++)
@@ -360,7 +341,5 @@ void List::Sort()
 			}
 		}
 	}
-	temp.PrintHead();
-	// сортирует, но выводит какие-то лишние символы в печать
-	//}
+	*this = temp;
 }

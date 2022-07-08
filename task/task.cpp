@@ -17,7 +17,7 @@ char& operator[](int position);
 	 Метод сортировки элементов списка.
 void Sort();
 ################################################################################################
-		СТАТУС : Не готово.
+		СТАТУС : Готово.
 ################################################################################################
 */
 
@@ -64,38 +64,38 @@ int main()
 	// возвращает позицию найденного элемента в случае
 	// успеха или - 1 в противном случае.
 	List list2;
-	//char s2[] = "Hello, World !!!";
-	char s2[] = "2013568479";
+	char s2[] = "Hello, World !!!";
+	//char s2[] = "2013564978";
 	cout << s2 << endl;
 	int len2 = strlen(s2);
-	for (int i = len - 1; i >= 0; i--)
+	for (int i = len2 - 1; i >= 0; i--)
 		list2.AddHead(s2[i]);
 	cout << "\nlist2:\n";
 	list2.PrintHead();
 	cout << "list2.Find('H');" << endl;
 	cout << list2.Find('H') << endl << endl;
 
-	//// Метод замены значения указанного элемента на другое
-	//// значение, передаваемое методу в качестве параметра.
-	//cout << "list2.Replace('@', 3);" << endl;
-	//list2.Replace('@', 3);
-	//cout << "list2:\n";
-	//list2.PrintHead();
-	//cout << endl << endl;
+	// Метод замены значения указанного элемента на другое
+	// значение, передаваемое методу в качестве параметра.
+	cout << "list2.Replace('@', 3);" << endl;
+	list2.Replace('@', 3);
+	cout << "list2:\n";
+	list2.PrintHead();
+	cout << endl << endl;
 
-	//// Метод удаления элементов списка, значение которых
-	//// совпадает с заданным ключом.
-	//cout << "list2.DelElementByKey('o');" << endl;
-	//list2.DelElementByKey('o');
-	//cout << "list2:\n";
-	//list2.PrintHead();
-	//cout << endl << endl;
+	// Метод удаления элементов списка, значение которых
+	// совпадает с заданным ключом.
+	cout << "list2.DelElementByKey('o');" << endl;
+	list2.DelElementByKey('o');
+	cout << "list2:\n";
+	list2.PrintHead();
+	cout << endl << endl;
 
-	//// Перегруженный оператор индексирования.
-	//cout << "const char ch = list2[1];" << endl;
-	//const char ch = list2[1];
-	//cout << "list2:\n";
-	//cout << ch << endl;
+	// Перегруженный оператор индексирования.
+	cout << "const char ch = list2[1];" << endl;
+	const char ch = list2[1];
+	cout << "list2:\n";
+	cout << ch << endl << endl;
 
 	// Метод сортировки элементов списка.
 	cout << "list2:\n";
